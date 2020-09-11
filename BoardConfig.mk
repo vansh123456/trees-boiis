@@ -189,14 +189,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-07-01
 
-# Sepolicy
-TARGET_SEPOLICY_DIR := msmsteppe
-include device/qcom/sepolicy/sepolicy.mk
-
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-
 # Verified Boot
 BOARD_AVB_ENABLE := true
 ifeq ($(BOARD_AVB_ENABLE), true)
@@ -223,3 +215,5 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
+
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
