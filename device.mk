@@ -442,3 +442,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
+#HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor
